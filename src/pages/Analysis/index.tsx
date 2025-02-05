@@ -39,7 +39,7 @@ const Analysis = () => {
     dayjs().subtract(1, 'year').unix(),
     dayjs().unix(),
   )
-
+  console.log(exerciseRecord, wordRecord)
   return (
     <Layout>
       <div className="flex w-full flex-1 flex-col overflow-y-auto pl-20 pr-20 pt-20">
@@ -53,10 +53,10 @@ const Analysis = () => {
             ) : (
               <>
                 <div className="mx-4 my-8 h-auto w-auto overflow-hidden rounded-lg p-8 shadow-lg dark:bg-gray-700 dark:bg-opacity-50">
-                  <HeatmapCharts title="过去一年练习次数热力图" data={exerciseRecord} />
+                  {exerciseRecord.length && <HeatmapCharts title="过去一年练习次数热力图" data={exerciseRecord} />}
                 </div>
                 <div className="mx-4 my-8 h-auto w-auto overflow-hidden rounded-lg p-8 shadow-lg dark:bg-gray-700 dark:bg-opacity-50">
-                  <HeatmapCharts title="过去一年练习词数热力图" data={wordRecord} />
+                  {wordRecord.length && <HeatmapCharts title="过去一年练习词数热力图" data={wordRecord} />}
                 </div>
                 <div className="mx-4 my-8 h-80 w-auto overflow-hidden rounded-lg p-8 shadow-lg dark:bg-gray-700 dark:bg-opacity-50">
                   <LineCharts title="过去一年WPM趋势图" name="WPM" data={wpmRecord} />

@@ -37,7 +37,7 @@ function Root() {
     const handleResize = () => {
       const isMobile = window.innerWidth <= 600
       if (!isMobile) {
-        window.location.href = '/'
+        window.location.href = '/qwerty'
       }
       setIsMobile(isMobile)
     }
@@ -48,7 +48,7 @@ function Root() {
 
   return (
     <React.StrictMode>
-      <BrowserRouter basename={REACT_APP_DEPLOY_ENV === 'pages' ? '/qwerty-learner' : ''}>
+      <BrowserRouter basename="/qwerty/">
         <Suspense fallback={<Loading />}>
           <Routes>
             {isMobile ? (
